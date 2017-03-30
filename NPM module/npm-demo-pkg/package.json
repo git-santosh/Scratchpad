@@ -1,0 +1,14 @@
+{
+  "name": "npm-demo-pkg",
+  "version": "1.0.0",
+  "description": "a demo package for test ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "santosh suryawanshi <santosh.suryawanshi@ap.jll.com>",
+  "license": "ISC"
+}
