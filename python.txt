@@ -1,0 +1,42 @@
+REPL : read evaluate print loop  (basically called it as python shell ) 
+
+To get out of the python shell you need to type exit() or quit()
+
+Ctrl + D / ctrl + z  
+
+if we want to get off help menu just type Q
+
+
+string represent in python is str 
+
+string = str in python 
+
+Python script : 
+
+
+NameError or TypeError 
+
+NameError happens whenever you try to use somthing that doesnt exist 
+
+5 + x 
+
+TypeError : Either you gave the wrong type of argument to a function 
+
+SyntaxError :
+ZeroDivisionError :
+
+we dont have to worry about memory management or taking care of garbage collection in python 
+
+python dont use any symbol or special character in beginning of variable name.
+
+del is keyword which wipe out the memory or variable form system 
+eg . 
+
+name = 'santosh'
+
+print(name)
+
+del name --> will erase name form memory and you will not get it use in again 
+
+
+round(89.4353e-17)
