@@ -1,5 +1,6 @@
  var http = require('http');
  var fs = require('fs');
+ var path = require('path');
 // function handle_request(req,res){
 //     var body = "this is the first node program written in Dell's laptop";
 //     var content_length = body.length;
@@ -53,7 +54,16 @@ function serve_static_file (file, res) {
     });
 }
 function content_type_for_path (file) {
-return "text/html";
+    var ext = path.extname(file);
+    switch(ext){
+        case '.html': return "text/html";
+        case ".js": return "text/javascript";
+        case ".css": return 'text/css';
+        case '.jpg': 
+        case '.jpeg': return 'image/jpeg';
+        default: return 'text/plain'; 
+    }
+
 }
 var server = http.createServer(handle_request);
 
