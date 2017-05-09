@@ -13,7 +13,7 @@
 // http.createServer(handle_request).listen(port, function(){
 //     console.log('server is running on port '+port);
 // });
-// hit url : http://localhost:8080/content/text.html
+
 function handle_request(req,res){
     var body;
     if(req.method.toLowerCase() == 'get' && req.url.substring(0, 9) == '/content/'){
@@ -39,11 +39,17 @@ function serve_static_file (file, res) {
              else if (typeof d == 'object' && d instanceof Buffer)
                 res.write(d.toString('utf8'));
         }
-        
+
     });
     
     rs.on('end',function(){
         res.end();
+    });
+    rs.on('error',function(e){
+        res.writeHead(404, { "Content-Type" : "application/json" });
+        var out = { error: "not_found",message: "'" + file + "' not found" };
+        res.end(JSON.stringify(out) + "\n");
+        return;
     });
 }
 function content_type_for_path (file) {
