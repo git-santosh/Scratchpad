@@ -1,0 +1,44 @@
+
+<html>
+<head>
+</head>
+<body>
+	<form>
+		<label> select your born year</label>
+		<input type="date" id="year" /> <input type="button" id="push" onclick="checkBornYear()" value="submit">
+		
+	</form>
+	<p id="output"></p>
+</body>
+</html>
+
+<script>
+var year=[1985,1986,1987,1988,1989];
+var year2 = [1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2002,2003,2004,2005,2006,2007,2008,2009,2010]
+var date = new Date().getFullYear();
+console.log(date);
+function checkYear(arr , val){
+	return arr.some(function(arrVal){
+	return val < arrVal;
+	})
+	
+}
+
+function checkBornYear(){
+	console.log('function called');
+	var input = document.getElementById('year').value;
+	console.log(input);
+	var flag = checkYear(year2,input.split('-')[0]);
+	console.log(flag);
+	if(flag){
+		document.getElementById("output").innerHTML = 'your are not 90\'s born'
+	}
+	else{
+		document.getElementById("output").innerHTML = 'your are 90\'s born'
+	}
+	 
+}
+
+</script>
+
+
