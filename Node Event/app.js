@@ -10,5 +10,5 @@ server.on('request',(req,res) =>{
 		res.end();
 	  })
 });
-
+console.log( process.versions.node.split('.').map(parseFloat));
 server.listen(3000);
