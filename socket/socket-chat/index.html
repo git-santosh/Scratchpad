@@ -28,8 +28,16 @@
     socket.on('connect',function(data){
         socket.emit('join','Client requst for connect');
     })
-    socket.on('message',function(data){
-        alert(data);
+
+    socket.on('broad', function(msg){
+      $('#messages').append($('<li>').text(msg));
     });
+    $('form').submit(function(e){
+     e.preventDefault();
+     var message = $('#m').val();
+     socket.emit('messages', message);
+      $('#m').val('');
+      return false;
+ });
 </script>
 </html>

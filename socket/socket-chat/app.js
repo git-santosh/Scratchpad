@@ -13,9 +13,13 @@ io.on('connection',function(client){
     console.log('Client Connected');
 
     client.on('join',function(data){
-        console.log(data);
-        client.emit('message',"Hello From Server");
-    })
+        console.log(data);  
+    });
+    client.on('messages',function(data){
+      console.log(data);
+        client.emit('broad', data);
+        client.broadcast.emit('broad',data);
+    });
 })
 server.listen(3000, function(){
   console.log('listening on *:3000');
