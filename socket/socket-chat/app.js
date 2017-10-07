@@ -17,8 +17,10 @@ io.on('connection',function(client){
     });
     client.on('messages',function(data){
       console.log(data);
-        client.emit('broad', data);
-        client.broadcast.emit('broad',data);
+        //client.emit('broad', data);
+
+        //What will happen now is that any event client are sending to the server will not get an event back
+        client.broadcast.emit('broad',data); 
     });
 })
 server.listen(3000, function(){
