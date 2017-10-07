@@ -1,0 +1,7 @@
+{
+  "name": "Async Example",
+  "version": "",
+  "dependencies": {
+    "async": "^2.5.0"
+  }
+}
