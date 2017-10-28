@@ -1,3 +1,5 @@
+
+let async = require('async');
 var globalVar;
 var globalObj = new Object();
 
