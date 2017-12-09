@@ -1,0 +1,32 @@
+
+let async = require('async');
+var globalVar;
+var globalObj = new Object();
+
+async.series([
+    function(callback) {
+        console.log(1)
+        callback(null, 'one');
+    },
+    function(callback) {
+        console.log(2)
+        callback(null, 'two');
+    },
+    function(callback) {
+        console.log(3)
+        callback(null, 'three')
+    },
+    function(callback) {
+        console.log(4)
+        callback(null, 'done!')
+    }
+
+], function (err, result) {
+    console.log(result);
+});
+
+//Array(4)
+//0:"one"
+//1:"two"
+//2:"three"
+//3:"done!"
