@@ -1,0 +1,25 @@
+const knex = require('knex');
+const fs = require('fs');
+const path = require('path');
+const convert = require('xml-js');
+var parseString = require('xml2js').parseString;
+const util = require('util');
+
+let readFileContent = (filename) => {
+    var contents = fs.readFileSync(filename, 'utf8');
+    return contents;
+}
+
+let xmlToJson = async () => {
+    let fileName = '/file/abc.xml';
+    if (fileName.endsWith('.xml')) {
+        let filePath = path.join(__dirname, fileName)
+        var xml = readFileContent(filePath);
+        //var result = convert.xml2json(xml, { compact: true, spaces: 4 });
+        parseString(xml, {explicitArray: false}, function(err, res){
+            console.log(util.inspect(res, false, null))
+            //console.log("Parsing result : ", res);
+        })
+        //console.log(result);
+    }
+}
