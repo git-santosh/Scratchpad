@@ -1,3 +1,6 @@
+By default, the fs module will write files with an encoding of 'utf8'. UTF-8 is an encoding commonly used in web pages and other documents. File encoding refers to the character set that is used for the contents of the file. Commonly used encodings are 'utf8', 'ascii', 'binary', 'hex', 'base64' and 'utf16le'.
+
+
 fs.unlink('/tmp/hello', (err) => {})
 fs.rename('/tmp/hello', '/tmp/world', (err) => {})
 fs.stat('/tmp/world', (err, stats) => {})
