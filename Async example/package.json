@@ -2,6 +2,6 @@
   "name": "Async Example",
   "version": "",
   "dependencies": {
-    "async": "^2.5.0"
+    "async": "^3.2.2"
   }
 }
