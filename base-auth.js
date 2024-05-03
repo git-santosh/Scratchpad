@@ -18,7 +18,6 @@ function authenticationStatus(resp) {
 var server = http.createServer(function (request, response) {
     var authentication, loginInfo;
     //5.
-	debugger;
 	console.log(request.headers);
     if (!request.headers.authorization) {
         authenticationStatus (response);
